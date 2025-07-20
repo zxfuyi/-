@@ -5,17 +5,28 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('container').appendChild(renderer.domElement);
 
+// Lighting
 const light = new THREE.PointLight(0xffffff, 1, 100);
 light.position.set(10, 10, 10);
 scene.add(light);
+
+// Add ambient light for better visibility
+const ambientLight = new THREE.AmbientLight(0x404040, 1); // Soft white light
+scene.add(ambientLight);
 
 const loader = new THREE.GLTFLoader();
 
 // Load 3D heart model
 loader.load('assets/heart.glb', function (gltf) {
   const heart = gltf.scene;
-  heart.scale.set(1.5, 1.5, 1.5);
+  heart.scale.set(1.5, 1.5, 1.5);  // Scale the heart to the correct size
+
+  // Position the heart at the center of the scene
+  heart.position.set(0, 0, 0);  // This ensures the heart is at the center of the scene
+
+  // Rotate the heart slightly for a dynamic effect
   heart.rotation.set(Math.PI / 4, Math.PI / 4, 0);
+
   scene.add(heart);
 
   // Add particle system
@@ -59,8 +70,8 @@ loader.load('assets/heart.glb', function (gltf) {
   animate();
 });
 
-// Adjust camera position
-camera.position.z = 5;
+// Adjust camera position for a clear view of the heart
+camera.position.z = 3;  // Make sure the camera is far enough to view the entire heart
 
 // Handle window resizing
 window.addEventListener('resize', () => {
