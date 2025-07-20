@@ -12,7 +12,7 @@ scene.add(light);
 const loader = new THREE.GLTFLoader();
 
 // Load 3D heart model
-loader.load('https://example.com/heart.glb', function (gltf) {
+loader.load('assets/heart.glb', function (gltf) {
   const heart = gltf.scene;
   heart.scale.set(1.5, 1.5, 1.5);
   heart.rotation.set(Math.PI / 4, Math.PI / 4, 0);
