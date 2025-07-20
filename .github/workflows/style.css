@@ -1,0 +1,32 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: radial-gradient(circle at top, #200c2a, #000);
+  color: #ffc0cb;
+  font-family: sans-serif;
+}
+
+#container {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
+.message {
+  font-size: 28px;
+  color: #d0005a;
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards;
+  animation-delay: 1s;
+  position: absolute;
+  bottom: 30px;
+  text-align: center;
+  width: 100%;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
