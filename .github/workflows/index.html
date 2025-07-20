@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Love</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: #200c2a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    #container {
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+    }
+
+    .message {
+      position: absolute;
+      font-size: 30px;
+      color: #ff99cc;
+      animation: fadeIn 3s ease-out forwards;
+      opacity: 0;
+      bottom: 30px;
+      text-align: center;
+      width: 100%;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="container"></div>
+  <div class="message">潘杨雅，我喜欢你 ❤️</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.0/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
