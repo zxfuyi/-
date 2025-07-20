@@ -1,0 +1,6 @@
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/你的账号名/表白爱心.git
+git push -u origin main
